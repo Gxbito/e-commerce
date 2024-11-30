@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setCurrentUser } from "../../../userSlice/userSlice";
+import { setCurrentUser } from "../../../UserSlice/userSlice";
 import { createUser } from "../../../../axios/axiosUser";
 import {
   FormStyled,

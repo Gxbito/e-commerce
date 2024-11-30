@@ -14,7 +14,7 @@ import { PrimaryButton, SquareButton, SecondaryButton } from "../UI/Boton";
 import { IoBagOutline, IoHeartOutline, IoMenuOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Separador from "../UI/Separador";
-import { setCurrentUser } from "../../features/userSlice/userSlice";
+import { setCurrentUser } from "../../features/UserSlice/userSlice";
 import { IoIosLogOut } from "react-icons/io";
 import { useDispatch } from "react-redux";
 

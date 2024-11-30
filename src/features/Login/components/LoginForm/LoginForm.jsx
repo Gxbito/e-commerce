@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { setCurrentUser } from "../../../userSlice/userSlice";
+import { setCurrentUser } from "../../../UserSlice/userSlice";
 import { loginUser } from "../../../../axios/axiosUser";
 import {
   Form,
