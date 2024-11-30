@@ -1,13 +1,17 @@
-import { TextAreaStyled } from "./TextAreaStyles";
+import { TextAreaStyled, TextAreaContainer } from "./TextAreaStyles";
 
-function TextArea({ placeholder, name, isError, ...props }) {
+function TextArea({ placeholder, name, isError, id, label, ...props }) {
   return (
-    <TextAreaStyled
-      placeholder={placeholder}
-      name={name}
-      error={isError}
-      {...props}
-    />
+    <TextAreaContainer>
+      <label htmlFor={id}>{label}</label>
+      <TextAreaStyled
+        id={id}
+        placeholder={placeholder}
+        name={name}
+        error={isError}
+        {...props}
+      />
+    </TextAreaContainer>
   );
 }
 

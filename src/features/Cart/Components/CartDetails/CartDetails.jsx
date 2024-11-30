@@ -3,52 +3,57 @@ import {
   SummaryData,
   CouponContainer,
   CheckoutContainer,
-} from "./CheckoutSummaryStyles";
+} from "./CartDetailsStyles";
 import { PrimaryButton } from "../../../../components/UI/Boton";
 import Separador from "../../../../components/UI/Separador";
 import Input from "../../../../components/UI/Input";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { updateCheckout } from "../../../../features/CheckoutSlice/checkoutSlice";
+import { useEffect } from "react";
 
-function CheckoutSummary() {
+function CartDetails() {
+  const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
 
-  // Calculos
-  const subtotal = items.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const discountRate = 0.12;
   const taxRate = 0.21;
-
-  // Cupon
   const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
 
-  // Calculos
   const tax = subtotal * taxRate;
   const total = subtotal - discount + tax;
 
-  // Fecha
   const currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + 3);
   const options = { day: "numeric", month: "long", year: "numeric" };
   const deliveryDate = currentDate.toLocaleDateString("en-US", options);
 
-  // Cupon
   const handleCoupon = (e) => {
     e.preventDefault();
-    
     const normalizedCoupon = coupon.trim().toLowerCase();
 
     if (normalizedCoupon === "nucba") {
       setDiscount(subtotal * discountRate);
-      // setCouponMessage("Cupón aplicado exitosamente");
     } else {
       setDiscount(0);
-      // setCouponMessage("El cupón no es válido");
     }
   };
+
+  useEffect(() => {
+    dispatch(
+      updateCheckout({
+        subtotal,
+        discount,
+        tax,
+        total,
+        estimatedDelivery: deliveryDate,
+      })
+    );
+  }, [subtotal, discount, tax, total, deliveryDate, dispatch]);
 
   return (
     <CheckoutContainer>
@@ -72,7 +77,9 @@ function CheckoutSummary() {
             Total <b>${total.toFixed(2)}</b>
           </h4>
         </SummaryData>
-        <PrimaryButton>Proceed to checkout</PrimaryButton>
+        <Link to="/checkout">
+          <PrimaryButton>Proceed to checkout</PrimaryButton>
+        </Link>
         <h4>Estimated Delivery by {deliveryDate}</h4>
       </SummaryContainer>
       <CouponContainer onSubmit={handleCoupon}>
@@ -82,10 +89,12 @@ function CheckoutSummary() {
           onChange={(e) => setCoupon(e.target.value)}
           placeholder="Enter coupon code"
         />
-        <PrimaryButton onClick={handleCoupon} type="submit">Use code</PrimaryButton>
+        <PrimaryButton onClick={handleCoupon} type="submit">
+          Use code
+        </PrimaryButton>
       </CouponContainer>
     </CheckoutContainer>
   );
 }
 
-export default CheckoutSummary;
+export default CartDetails;

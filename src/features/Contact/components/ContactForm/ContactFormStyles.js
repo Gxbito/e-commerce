@@ -48,7 +48,7 @@ export const FormInputContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1.8em;
 
   & > input {
     width: 100%;

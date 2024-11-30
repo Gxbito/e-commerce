@@ -16,10 +16,10 @@ function ContactForm() {
   const [send, setIsSend] = useState(false);
 
   const validationSchema = Yup.object({
-    name: Yup.string()
-      .trim()
+    name: Yup.string().trim().required("Campo requerido"),
+    email: Yup.string()
+      .email("Ingresa un correo electronico válido")
       .required("Campo requerido"),
-    email: Yup.string().email("Ingresa un correo electronico válido").required("Campo requerido"),
     comments: Yup.string()
       .max(205, "Solo se permite un máximo de 205 caracteres")
       .notRequired(),
@@ -36,7 +36,7 @@ function ContactForm() {
 
     onSubmit: (values, { resetForm }) => {
       console.log({ values });
-      console.log(errors)
+      console.log(errors);
       resetForm();
       setIsSend(true);
       setTimeout(() => setIsSend(false), 2000);
@@ -54,6 +54,8 @@ function ContactForm() {
 
       <FormInputContainer>
         <Input
+          id="name"
+          label="Enter your name"
           name="name"
           type="text"
           placeholder="Your name"
@@ -61,6 +63,8 @@ function ContactForm() {
           {...getFieldProps("name")}
         />
         <Input
+          id="email"
+          label="Enter your email address"
           name="email"
           type="email"
           placeholder="Your email"
@@ -68,6 +72,8 @@ function ContactForm() {
           {...getFieldProps("email")}
         />
         <TextArea
+          id="comments"
+          label="Enter your comment"
           name="comments"
           placeholder="Your message"
           isError={touched.comments && errors.comments}

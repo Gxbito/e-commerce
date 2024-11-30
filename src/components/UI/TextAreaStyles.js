@@ -1,8 +1,24 @@
 import styled from "styled-components";
 
+export const TextAreaContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.4em;
+
+  label {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--black);
+  }
+`;
+
 export const TextAreaStyled = styled.textarea`
   width: 100%;
-  height: 150px;
+  height: 100%;
   resize: none;
   padding: 1em;
   border-radius: 4px;
@@ -21,5 +37,4 @@ export const TextAreaStyled = styled.textarea`
   &:hover {
     background: var(--neutral-100);
   }
-  
 `;

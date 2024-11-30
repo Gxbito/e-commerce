@@ -10,6 +10,7 @@ import {
   Options,
   ProductsContainer,
   CategoryOptionsContainer,
+  ModalBackground,
 } from "./ShopProductsStyles";
 import Selector from "../../../components/UI/Selector";
 import Checkbox from "../../../components/UI/Checkbox";
@@ -20,14 +21,17 @@ import { IoIosList, IoMdApps } from "react-icons/io";
 import { productos } from "../../../data/productos";
 import ProductCard from "../../../components/UI/Card";
 import MiniCard from "../../../components/UI/MiniCard";
+import ProductModal from "../../../components/UI/ProductModal";
 
 function ShopProducts() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("All Products");
-  const [activeButton, setActiveButton] = useState(null);
   const [showMiniCard, setShowMiniCard] = useState(null);
   const [visibleMiniCard, setVisibleMiniCard] = useState(false);
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
+  const [showModal, setShowModal] = useState(false);
+  const [productModal, setProductModal] = useState(null);
+  const [activeButton, setActiveButton] = useState("square");
 
   const [isOpen, setIsOpen] = useState({
     gender: false,
@@ -40,8 +44,8 @@ function ShopProducts() {
     season: [],
   });
 
-  const handleButtonClick = () => {
-    setActiveButton(activeButton === buttonName ? null : buttonName);
+  const handleButtonClick = (buttonType) => {
+    setActiveButton(buttonType);
   };
 
   const handleSearchChange = (e) => {
@@ -77,15 +81,24 @@ function ShopProducts() {
     }));
   };
 
+  const handleShowModal = (product) => {
+    setProductModal(product);
+    setShowModal(true);
+  };
+
+  const handleHideModal = () => {
+    setShowModal(false);
+  };
+
   const handleAddToCart = (product) => {
     setShowMiniCard({ ...product });
-
+    setShowModal(false);
     setVisibleMiniCard(true);
 
     setTimeout(() => {
       setVisibleMiniCard(false);
       setShowMiniCard(null);
-    }, 5000);
+    }, 3000);
   };
 
   const sortOptionHandler = (option) => {
@@ -248,26 +261,27 @@ function ShopProducts() {
 
           <Options>
             <SquareButton
-              isActive={activeButton === "list"}
+              isSelected={activeButton === "list"}
               onClick={() => handleButtonClick("list")}
             >
               <IoIosList />
             </SquareButton>
-            <SquareButton>
-              <IoMdApps
-                isActive={activeButton === "square"}
-                onClick={() => handleButtonClick("square")}
-              />
+            <SquareButton
+              isSelected={activeButton === "square"}
+              onClick={() => handleButtonClick("square")}
+            >
+              <IoMdApps />
             </SquareButton>
           </Options>
         </OptionsContainer>
 
-        <ProductsContainer>
+        <ProductsContainer activeStyle={activeButton}>
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               {...product}
-              onAddToCart={handleAddToCart}
+              onShow={handleShowModal}
+              activeStyle={activeButton}
             />
           ))}
 
@@ -278,7 +292,21 @@ function ShopProducts() {
             category={showMiniCard?.category}
             visibleMiniCard={visibleMiniCard}
           />
+
+          <ProductModal
+            id={productModal?.id}
+            img={productModal?.img}
+            title={productModal?.title}
+            brand={productModal?.brand}
+            price={productModal?.price}
+            category={productModal?.category}
+            sizes={productModal?.size || {}}
+            showModal={showModal}
+            onAddToCart={handleAddToCart}
+            hideModal={handleHideModal}
+          />
         </ProductsContainer>
+        <ModalBackground showModal={showModal} />
       </ItemsOptionsContainer>
     </ProductShopWrapper>
   );

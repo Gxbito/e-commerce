@@ -124,10 +124,21 @@ export const ProductsContainer = styled.div`
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: ${({activeStyle}) => (activeStyle === "list" ? "repeat(2, 1fr)" : "repeat(auto-fill, minmax(280px, 1fr))")};
   gap: 1em;
 
   @media (max-width: 668px) {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: ${({activeStyle}) => (activeStyle === "list" ? "repeat(1, 1fr)" : "repeat(auto-fit, minmax(140px, 1fr))")};
   }
+`;
+
+export const ModalBackground = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: ${({ showModal }) => (showModal ? "flex" : "none")};
 `;

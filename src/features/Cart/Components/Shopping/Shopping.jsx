@@ -21,6 +21,10 @@ function Shopping() {
   const dispatch = useDispatch();
   const [showUndo, setShowUndo] = useState(false);
 
+  console.log(items)
+
+  const quantity = items.reduce((total, item) => total + item.quantity, 0);
+
   useEffect(() => {
     if (recentlyRemoved) {
       setShowUndo(true);
@@ -51,7 +55,7 @@ function Shopping() {
           <h3>Shopping Cart</h3>
           <h4>
             <b>
-              {items.length} item{items.length !== 1 ? "s " : " "}
+              {quantity} item{quantity !== 1 ? "s " : " "}
             </b>
             in your bag
           </h4>

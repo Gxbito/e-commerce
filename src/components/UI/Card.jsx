@@ -1,20 +1,28 @@
-import {
-  ProductCardStyled,
-  ProductDataContainer,
-  ButtonsContainer,
-} from "./CardStyles";
-import { PrimaryCardButton, SecondaryCardButton } from "./Boton";
-import { useDispatch } from "react-redux";
+import { ProductCardStyled, ProductDataContainer } from "./CardStyles";
+import { PrimaryCardButton } from "./Boton";
 import { useState, useEffect } from "react";
-import { addToCart } from "../../features/CartSlice/cartSlice";
+import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 
-function ProductCard({ id, img, title, brand, category, price, onAddToCart }) {
+function ProductCard({
+  id,
+  img,
+  title,
+  brand,
+  category,
+  price,
+  size,
+  onShow,
+  activeStyle,
+}) {
   const [isVisible, setIsVisible] = useState(false);
-  const dispatch = useDispatch();
+  const [isFavourite, setIsFavourite] = useState(false);
 
-  const handleAddToCart = () => {
-    dispatch(addToCart({ id, img, title, brand, category, price }));
-    onAddToCart({ id, img, title, brand, category, price });
+  const handleFavourite = () => {
+    setIsFavourite((prev) => !prev);
+  };
+
+  const handleShowModal = () => {
+    onShow({ id, img, title, brand, category, price, size });
   };
 
   useEffect(() => {
@@ -22,21 +30,27 @@ function ProductCard({ id, img, title, brand, category, price, onAddToCart }) {
   }, []);
 
   return (
-    <ProductCardStyled isVisible={isVisible}>
+    <ProductCardStyled isVisible={isVisible} activeStyle={activeStyle}>
+      <button onClick={handleFavourite} isFavourite={isFavourite}>
+        {isFavourite ? (
+          <>
+            <IoMdHeart />
+          </>
+        ) : (
+          <>
+            <IoMdHeartEmpty />
+          </>
+        )}
+      </button>
       <img src={img} alt={category || "Product"} />
-      <ProductDataContainer>
+      <ProductDataContainer activeStyle={activeStyle}>
         <h4>{title}</h4>
         <h5>{brand}</h5>
         <h3>
           ${price} <b>${price * 0.8}</b>
         </h3>
+        <PrimaryCardButton onClick={handleShowModal}>Buy Now</PrimaryCardButton>
       </ProductDataContainer>
-      <ButtonsContainer>
-        <SecondaryCardButton onClick={handleAddToCart}>
-          Add to Cart
-        </SecondaryCardButton>
-        <PrimaryCardButton>Buy Now</PrimaryCardButton>
-      </ButtonsContainer>
     </ProductCardStyled>
   );
 }

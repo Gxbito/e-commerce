@@ -22,7 +22,7 @@ export const InputStyled = styled.input`
   width: 100%;
   background: var(--neutral-50);
   outline: none;
-  border: ${({ error }) => (error ? "1px solid red" : "none")};
+  border: ${({ isError }) => (isError ? "1px solid red" : "none")};
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: 1em;
@@ -37,7 +37,7 @@ export const InputStyled = styled.input`
     background: var(--neutral-100);
   }
 
-  & + p {
+  & + span {
     color: red;
     font-size: 1em;
     font-weight: 500;

@@ -7,6 +7,7 @@ export const productos = [
     brand: "GlamWear",
     price: 120,
     season: "Summer",
+    size: ["S", "M", "L"],
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const productos = [
     brand: "CasualFit",
     price: 145,
     season: "Winter",
+    size: ["M", "L"],
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const productos = [
     brand: "Elegance & Co.",
     price: 115,
     season: "Winter",
+    size: ["S", "M"],
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const productos = [
     brand: "UrbanStyle",
     price: 90,
     season: "Summer",
+    size: ["L", "XL"],
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const productos = [
     brand: "GlamWear",
     price: 110,
     season: "Spring",
+    size: ["S"],
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const productos = [
     brand: "UrbanStyle",
     price: 120,
     season: "Fall",
+    size: ["M", "L", "XL"],
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export const productos = [
     brand: "Elegance & Co.",
     price: 150,
     season: "Winter",
+    size: ["S", "M", "L", "XL"],
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ export const productos = [
     brand: "CasualFit",
     price: 150,
     season: "Winter",
+    size: ["M"],
   },
   {
     id: 9,
@@ -79,6 +87,7 @@ export const productos = [
     brand: "GlamWear",
     price: 130,
     season: "Fall",
+    size: ["L", "XL"],
   },
   {
     id: 10,
@@ -88,6 +97,7 @@ export const productos = [
     brand: "UrbanStyle",
     price: 115,
     season: "Spring",
+    size: ["S", "M", "L"],
   },
   {
     id: 11,
@@ -97,6 +107,7 @@ export const productos = [
     brand: "CasualFit",
     price: 100,
     season: "Spring",
+    size: ["M", "L"],
   },
   {
     id: 12,
@@ -106,6 +117,7 @@ export const productos = [
     brand: "UrbanStyle",
     price: 105,
     season: "Summer",
+    size: ["S"],
   },
   {
     id: 13,
@@ -115,6 +127,7 @@ export const productos = [
     brand: "GlamWear",
     price: 90,
     season: "Summer",
+    size: ["S", "M", "L", "XL"],
   },
   {
     id: 14,
@@ -124,6 +137,7 @@ export const productos = [
     brand: "Elegance & Co.",
     price: 160,
     season: "Winter",
+    size: ["L", "XL"],
   },
   {
     id: 15,
@@ -133,6 +147,7 @@ export const productos = [
     brand: "GlamWear",
     price: 135,
     season: "Summer",
+    size: ["S", "M"],
   },
   {
     id: 16,
@@ -142,6 +157,7 @@ export const productos = [
     brand: "CasualFit",
     price: 170,
     season: "Fall",
+    size: ["M", "L", "XL"],
   },
   {
     id: 17,
@@ -151,6 +167,7 @@ export const productos = [
     brand: "Elegance & Co.",
     price: 105,
     season: "Summer",
+    size: ["S"],
   },
   {
     id: 18,
@@ -160,6 +177,7 @@ export const productos = [
     brand: "UrbanStyle",
     price: 95,
     season: "Summer",
+    size: ["M", "L"],
   },
   {
     id: 19,
@@ -169,6 +187,7 @@ export const productos = [
     brand: "GlamWear",
     price: 145,
     season: "Fall",
+    size: ["S", "M", "L"],
   },
   {
     id: 20,
@@ -178,5 +197,6 @@ export const productos = [
     brand: "CasualFit",
     price: 130,
     season: "Spring",
+    size: ["M", "L"],
   },
 ];

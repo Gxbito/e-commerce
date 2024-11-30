@@ -9,24 +9,38 @@ import {
   SubmitButtonStyled,
 } from "./BotonStyles";
 
-function PrimaryButton({ children }) {
-  return <PrimaryButtonStyled type="submit">{children}</PrimaryButtonStyled>;
-}
-
-function SecondaryButton({ children }) {
-  return <SecondaryButtonStyled>{children}</SecondaryButtonStyled>;
-}
-
-function SquareButton({ children, onClick, isActive }) {
+function PrimaryButton({ children, onClick }) {
   return (
-    <SquareButtonStyled onClick={onClick} isActive={isActive}>
+    <PrimaryButtonStyled type="submit" onClick={onClick}>
+      {children}
+    </PrimaryButtonStyled>
+  );
+}
+
+function SecondaryButton({ children, onClick }) {
+  return (
+    <SecondaryButtonStyled onClick={onClick}>{children}</SecondaryButtonStyled>
+  );
+}
+
+function SquareButton({ children, onClick, isSelected, warning }) {
+  return (
+    <SquareButtonStyled
+      onClick={onClick}
+      isSelected={isSelected}
+      warning={warning}
+    >
       {children}
     </SquareButtonStyled>
   );
 }
 
-function PrimaryCardButton({ children }) {
-  return <PrimaryCardButtonStyled>{children}</PrimaryCardButtonStyled>;
+function PrimaryCardButton({ children, onClick }) {
+  return (
+    <PrimaryCardButtonStyled onClick={onClick}>
+      {children}
+    </PrimaryCardButtonStyled>
+  );
 }
 
 function SecondaryCardButton({ children, onClick }) {
@@ -45,14 +59,9 @@ function ChangeColorButton({ children, onClick }) {
   );
 }
 
-function SubmitButton({ children, onSubmit, type }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit();
-  };
-
+function SubmitButton({ children, onClick, ...props }) {
   return (
-    <SubmitButtonStyled onClick={handleSubmit} type={type}>
+    <SubmitButtonStyled onClick={onClick} {...props}>
       {children}
     </SubmitButtonStyled>
   );

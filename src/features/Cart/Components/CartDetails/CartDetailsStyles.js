@@ -78,6 +78,14 @@ export const SummaryData = styled.div`
   & > div {
     padding: 0em;
   }
+  
+  & + a {
+    width: 100%;
+  }
+
+  & + a > button {
+    width: 100%;
+  }
 `;
 
 export const CouponContainer = styled.form`

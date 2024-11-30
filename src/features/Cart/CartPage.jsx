@@ -1,4 +1,4 @@
-import CheckoutSummary from "./Components/Checkout/CheckoutSummary"
+import CartDetails from "./Components/CartDetails/CartDetails"
 import Layout from "./Components/Layout/Layout"
 import Shopping from "./Components/Shopping/Shopping"
 
@@ -6,7 +6,7 @@ function CartPage() {
   return (
     <Layout>
       <Shopping/>
-      <CheckoutSummary/>
+      <CartDetails/>
     </Layout>
     
   )

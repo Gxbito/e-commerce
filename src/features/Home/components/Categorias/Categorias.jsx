@@ -7,6 +7,7 @@ import {
 import { categorias } from "../../../../data/categorias";
 import Categoria from "./Categoria";
 import { SecondaryButton } from "../../../../components/UI/Boton";
+import { Link } from "react-router-dom";
 
 function Categorias() {
   return (
@@ -23,7 +24,9 @@ function Categorias() {
           way.
         </p>
 
-        <SecondaryButton>See all categories</SecondaryButton>
+        <Link to="products">
+          <SecondaryButton>Shop now</SecondaryButton>
+        </Link>
       </CategoriesTextButtonContainer>
 
       <CategoriesContainer>

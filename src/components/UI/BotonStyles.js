@@ -74,18 +74,19 @@ export const SecondaryButtonStyled = styled.button`
 `;
 
 export const SquareButtonStyled = styled.button`
-  /* Boton */
+  /* Estilos */
   cursor: pointer;
   outline: none;
   border: none;
   border-radius: 4px;
-  background-color: ${({ isActive }) =>
-    isActive ? "var(--primary-500)" : "var(--neutral-50)"};
+  background-color: ${({ isSelected }) =>
+    isSelected ? "var(--primary-500)" : "var(--neutral-50)"};
+  border: ${({ warning }) => (warning ? "1px solid red" : "none")};
 
   /* Fuente */
+  font-family: var(--font-primary);
   font-size: 1.4em;
-  color: ${({ isActive }) =>
-    isActive ? "var(--neutral-50)" : "var(--neutral-900)"};
+  color: ${({ isSelected }) => (isSelected ? "#ffffff" : "var(--black)")};
 
   /* Dimensiones */
   min-height: 50px;
@@ -96,22 +97,18 @@ export const SquareButtonStyled = styled.button`
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: ${(props) =>
-      props.isActive ? "var(--primary-600)" : "var(--neutral-100)"};
-    color: ${(props) =>
-      props.isActive ? "var(--neutral-100)" : "var(--neutral-800)"};
+    background-color: ${({ isSelected }) =>
+      isSelected ? "var(--primary-600)" : "var(--neutral-100)"};
   }
 
   &:active {
-    background-color: ${(props) =>
-      props.isActive ? "var(--primary-700)" : "var(--neutral-200)"};
-    color: ${(props) =>
-      props.isActive ? "var(--neutral-200)" : "var(--neutral-900)"};
+    background-color: ${({ isSelected }) =>
+      isSelected ? "var(--primary-600)" : "var(--neutral-200)"};
   }
 `;
 
 export const PrimaryCardButtonStyled = styled.button`
-  /* Boton */
+  /* Estilos */
   cursor: pointer;
   border: none;
   outline: none;
@@ -146,7 +143,7 @@ export const PrimaryCardButtonStyled = styled.button`
 `;
 
 export const SecondaryCardButtonStyled = styled.button`
-  /* Boton */
+  /* Estilos */
   cursor: pointer;
   border: none;
   outline: none;
@@ -206,5 +203,4 @@ export const ChangeColorButtonStyled = styled.button`
   }
 `;
 
-export const SubmitButtonStyled = styled(PrimaryButtonStyled)`
-`;
+export const SubmitButtonStyled = styled(PrimaryButtonStyled)``;

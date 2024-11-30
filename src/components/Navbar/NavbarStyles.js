@@ -122,3 +122,40 @@ export const NumberSpan = styled.span`
   font-weight: 500;
   box-shadow: var(--shadow);
 `;
+
+export const UserContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8em;
+  margin-left: 1em;
+
+  @media (max-width: 968px) {
+    margin: 0;
+  }
+
+  span {
+    font-size: 1em;
+    font-family: var(--font-primary);
+    color: var(--neutral-700);
+    font-weight: 500;
+
+    b {
+      font-size: 1em;
+      font-family: var(--font-primary);
+      color: var(--black);
+      font-weight: 600;
+    }
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  }
+
+  & + button {
+    min-width: 40px;
+    min-height: 40px;
+  }
+`;

@@ -8,9 +8,13 @@ export const ProductCardStyled = styled.div`
   padding: 0.8em;
   border-radius: 4px;
   gap: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: ${({ activeStyle }) => (activeStyle === "list" ? "grid" : "flex")};
+  flex-direction: ${({ activeStyle }) =>
+    activeStyle === "list" ? "" : "column"};
+  grid-template-columns: ${({ activeStyle }) =>
+    activeStyle === "list" ? "30% 65%" : ""};
+  justify-content: ${({ activeStyle }) =>
+    activeStyle === "list" ? "flex-start" : "center"};
   align-items: flex-start;
   max-width: 100%;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
@@ -26,25 +30,65 @@ export const ProductCardStyled = styled.div`
 
   img {
     width: 100%;
-    height: 340px;
-    border-radius: 4px 4px 0px 0px;
+    height: ${({ activeStyle }) =>
+      activeStyle === "list" ? "160px" : "380px"};
+    border-radius: ${({ activeStyle }) =>
+      activeStyle === "list" ? "4px" : "4px 4px 0px 0px"};
     object-fit: cover;
 
     @media (max-width: 968px) {
       height: 200px;
     }
   }
+
+  button:nth-child(1) {
+    position: absolute;
+    right: ${({ activeStyle }) =>
+      activeStyle === "list" ? "0.4em" : "0.8em"};
+    top: ${({ activeStyle }) =>
+      activeStyle === "list" ? "0.4em" : "0.8em"};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    border: none;
+    border-radius: 100%;
+    font-size: ${({ activeStyle }) =>
+      activeStyle === "list" ? "1.4em" : "1.8em"};
+    padding: 0.2em;
+    cursor: pointer;
+    color: var(--primary-500);
+    box-shadow: var(--shadow);
+    transition: scale 0.2s ease;
+
+    &:hover {
+      background-color: var(--neutral-50);
+      color: var(--primary-600);
+    }
+
+    &:active {
+      background-color: var(--neutral-200);
+      color: var(--primary-700);
+      scale: 0.95;
+    }
+  }
 `;
 
 export const ProductDataContainer = styled.div`
   width: 100%;
-  height: auto;
+  height: ${({ activeStyle }) => (activeStyle === "list" ? "100%" : "auto")};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 0.2em;
   text-overflow: ellipsis;
+
+  & > button {
+    width: 60%;
+    margin-top: ${({ activeStyle }) =>
+      activeStyle === "list" ? "auto" : "0.8em"};
+  }
 
   h4 {
     font-family: var(--font-primary);
@@ -88,18 +132,3 @@ export const ProductDataContainer = styled.div`
     }
   }
 `;
-
-export const ButtonsContainer = styled.div`
-  width: 100%;
-  height: auto;
-  display: grid;
-  grid-template-columns: 48% 48%;
-  justify-content: space-between;
-
-  @media (max-width: 968px) {
-    grid-template-columns: 1fr;
-    gap: 0.4em;
-  }
-`;
-
-

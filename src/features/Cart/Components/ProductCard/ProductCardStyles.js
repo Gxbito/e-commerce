@@ -75,6 +75,13 @@ export const DataTextContainer = styled.div`
     font-weight: 400;
     font-size: 1em;
     color: var(--neutral-700);
+
+    b {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 1em;
+      color: var(--neutral-900);
+    }
   }
 
   h3 {

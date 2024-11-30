@@ -11,7 +11,7 @@ import {
   incrementQuantity,
 } from "../../../CartSlice/cartSlice";
 
-function ProductCard({ id, img, title, brand, category, price, quantity }) {
+function ProductCard({ id, img, title, brand, category, price, quantity, selectedSize }) {
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
@@ -22,18 +22,20 @@ function ProductCard({ id, img, title, brand, category, price, quantity }) {
     dispatch(decrementQuantity(id));
   };
 
+  console.log(selectedSize)
+
   return (
     <CardContainer>
       <MainDataContainer>
         <img src={img} alt={category} />
         <DataTextContainer>
           <h3>${price.toFixed(2)}</h3>
+          <h4>{brand}</h4>
           <h3>
             {title} <b>${price.toFixed(2)}</b>
           </h3>
-
           <h4>
-            {brand} / {category}
+            Size: <b>{selectedSize}</b>
           </h4>
         </DataTextContainer>
       </MainDataContainer>

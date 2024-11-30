@@ -8,6 +8,7 @@ export const CategoriesContainerWrapper = styled.div`
   grid-template-columns: 30% 65%;
   justify-content: space-between;
   padding: 4em;
+  
 
 
   @media (max-width: 968px) {
@@ -36,12 +37,14 @@ export const CategoriesTextButtonContainer = styled.div`
     margin-top: 0.2em;
     margin-bottom: 0.8em;
     line-height: 100%;
+    text-decoration: none;
 
     b {
       font-weight: 900;
       line-height: 100%;
       color: var(--primary-500);
       font-family: var(--font-primary);
+      text-decoration: none;
     }
   }
 
