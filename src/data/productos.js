@@ -1,7 +1,28 @@
+import woman1 from "../assets/images/products/woman-1.jpg";
+import man2 from "../assets/images/products/man-2.jpg";
+import woman2 from "../assets/images/products/woman-2.jpg";
+import man3 from "../assets/images/products/man-3.jpg";
+import woman3 from "../assets/images/products/woman-3.jpg";
+import man4 from "../assets/images/products/man-4.jpg";
+import woman4 from "../assets/images/products/woman-4.jpg";
+import man5 from "../assets/images/products/man-5.jpg";
+import woman5 from "../assets/images/products/woman-5.jpg";
+import man6 from "../assets/images/products/man-6.jpg";
+import woman6 from "../assets/images/products/woman-6.jpg";
+import man7 from "../assets/images/products/man-7.jpg";
+import woman7 from "../assets/images/products/woman-7.jpg";
+import man8 from "../assets/images/products/man-8.jpg";
+import woman8 from "../assets/images/products/woman-8.jpg";
+import man9 from "../assets/images/products/man-9.jpg";
+import woman9 from "../assets/images/products/woman-9.jpg";
+import man10 from "../assets/images/products/man-10.jpg";
+import woman10 from "../assets/images/products/woman-10.jpg";
+import man1 from "../assets/images/products/man-1.jpg";
+
 export const productos = [
   {
     id: 1,
-    img: "./src/assets/images/products/woman-1.jpg",
+    img: woman1,
     title: "Emerald Green Jumpsuit",
     category: "Women",
     brand: "GlamWear",
@@ -11,7 +32,7 @@ export const productos = [
   },
   {
     id: 2,
-    img: "./src/assets/images/products/man-2.jpg",
+    img: man2,
     title: "Formal Blue Jacket",
     category: "Men",
     brand: "CasualFit",
@@ -21,7 +42,7 @@ export const productos = [
   },
   {
     id: 3,
-    img: "./src/assets/images/products/woman-2.jpg",
+    img: woman2,
     title: "Classic Gray Blazer",
     category: "Women",
     brand: "Elegance & Co.",
@@ -31,7 +52,7 @@ export const productos = [
   },
   {
     id: 4,
-    img: "./src/assets/images/products/man-3.jpg",
+    img: man3,
     title: "Casual Beige Shirt",
     category: "Men",
     brand: "UrbanStyle",
@@ -41,7 +62,7 @@ export const productos = [
   },
   {
     id: 5,
-    img: "./src/assets/images/products/woman-3.jpg",
+    img: woman3,
     title: "Shiny Silver Top",
     category: "Women",
     brand: "GlamWear",
@@ -51,7 +72,7 @@ export const productos = [
   },
   {
     id: 6,
-    img: "./src/assets/images/products/man-4.jpg",
+    img: man4,
     title: "Modern Yellow Jacket",
     category: "Men",
     brand: "UrbanStyle",
@@ -61,7 +82,7 @@ export const productos = [
   },
   {
     id: 7,
-    img: "./src/assets/images/products/woman-4.jpg",
+    img: woman4,
     title: "Leather Trench Coat",
     category: "Women",
     brand: "Elegance & Co.",
@@ -71,7 +92,7 @@ export const productos = [
   },
   {
     id: 8,
-    img: "./src/assets/images/products/man-5.jpg",
+    img: man5,
     title: "Classic Executive Look",
     category: "Men",
     brand: "CasualFit",
@@ -81,7 +102,7 @@ export const productos = [
   },
   {
     id: 9,
-    img: "./src/assets/images/products/woman-5.jpg",
+    img: woman5,
     title: "Fiery Red Suit",
     category: "Women",
     brand: "GlamWear",
@@ -91,7 +112,7 @@ export const productos = [
   },
   {
     id: 10,
-    img: "./src/assets/images/products/man-6.jpg",
+    img: man6,
     title: "Emerald Green Shirt",
     category: "Men",
     brand: "UrbanStyle",
@@ -101,7 +122,7 @@ export const productos = [
   },
   {
     id: 11,
-    img: "./src/assets/images/products/woman-6.jpg",
+    img: woman6,
     title: "Wide-Leg Pants Set",
     category: "Women",
     brand: "CasualFit",
@@ -111,7 +132,7 @@ export const productos = [
   },
   {
     id: 12,
-    img: "./src/assets/images/products/man-7.jpg",
+    img: man7,
     title: "Casual Look with Hat",
     category: "Men",
     brand: "UrbanStyle",
@@ -121,7 +142,7 @@ export const productos = [
   },
   {
     id: 13,
-    img: "./src/assets/images/products/woman-7.jpg",
+    img: woman7,
     title: "Casual Orange Dress",
     category: "Women",
     brand: "GlamWear",
@@ -131,7 +152,7 @@ export const productos = [
   },
   {
     id: 14,
-    img: "./src/assets/images/products/man-8.jpg",
+    img: man8,
     title: "Elegant Gray Coat",
     category: "Men",
     brand: "Elegance & Co.",
@@ -141,7 +162,7 @@ export const productos = [
   },
   {
     id: 15,
-    img: "./src/assets/images/products/woman-8.jpg",
+    img: woman8,
     title: "Sunshine Yellow Suit",
     category: "Women",
     brand: "GlamWear",
@@ -151,7 +172,7 @@ export const productos = [
   },
   {
     id: 16,
-    img: "./src/assets/images/products/man-9.jpg",
+    img: man9,
     title: "Classic Black Suit",
     category: "Men",
     brand: "CasualFit",
@@ -161,7 +182,7 @@ export const productos = [
   },
   {
     id: 17,
-    img: "./src/assets/images/products/woman-9.jpg",
+    img: woman9,
     title: "Tropical Green Dress",
     category: "Women",
     brand: "Elegance & Co.",
@@ -171,7 +192,7 @@ export const productos = [
   },
   {
     id: 18,
-    img: "./src/assets/images/products/man-10.jpg",
+    img: man10,
     title: "Relaxed White Shirt",
     category: "Men",
     brand: "UrbanStyle",
@@ -181,7 +202,7 @@ export const productos = [
   },
   {
     id: 19,
-    img: "./src/assets/images/products/woman-10.jpg",
+    img: woman10,
     title: "Golden Satin Set",
     category: "Women",
     brand: "GlamWear",
@@ -191,7 +212,7 @@ export const productos = [
   },
   {
     id: 20,
-    img: "./src/assets/images/products/man-1.jpg",
+    img: man1,
     title: "Casual Pink Blazer",
     category: "Men",
     brand: "CasualFit",

@@ -1,21 +1,23 @@
+import womenCategory from "../assets/images/women-category.jpg";
+import menCategory from "../assets/images/men-category.jpg";
+import kidsCategory from "../assets/images/kids-category.jpg";
+
 export const categorias = [
   {
     id: 1,
-    img: "./src/assets/images/women-category.jpg",
+    img: womenCategory,
     title: "WOMEN FASHION",
     category: "Women",
   },
-
   {
     id: 2,
-    img: "./src/assets/images/men-category.jpg",
+    img: menCategory,
     title: "MEN FASHION",
     category: "Men",
   },
-
   {
     id: 3,
-    img: "./src/assets/images/kids-category.jpg",
+    img: kidsCategory,
     title: "KIDS FASHION",
     category: "Kids",
   },
