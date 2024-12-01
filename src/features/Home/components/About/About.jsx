@@ -5,13 +5,14 @@ import {
 } from "./AboutStyles";
 import { SecondaryButton } from "../../../../components/UI/Boton";
 import { Link } from "react-router-dom";
+import AboutImage from "../../../../assets/images/about-section-img.jpg"
 
 function About() {
   
   return (
     <AboutWrapper>
       <AboutImageContainer>
-        <img src="./src/assets/images/about-section-img.jpg" alt="" />
+        <img src={AboutImage} alt="Purple Dress Girl" />
       </AboutImageContainer>
 
       <AboutTextButtonContainer>
