@@ -43,10 +43,9 @@ export const GlobalStyles = createGlobalStyle`
 	--shadow-button: 0 1px 2px 0 rgba(163, 163, 163, 0.15), 0 4px 4px 0 rgba(163, 163, 163, 0.13), 0 9px 6px 0 rgba(163, 163, 163, 0.08), 0 16px 7px 0 rgba(163, 163, 163, 0.02), 0 26px 7px 0 rgba(163, 163, 163, 0);
 	--shadow-button-active: 0 1px 1px 0 rgba(186, 186, 186, 0.05), 0 2px 2px 0 rgba(186, 186, 186, 0.04), 0 5px 3px 0 rgba(186, 186, 186, 0.03), 0 9px 4px 0 rgba(186, 186, 186, 0.01), 0 15px 4px 0 rgba(186, 186, 186, 0);
 	
-	/* FONDOS*/
-	--hero-desktop-background: url('/src/assets/images/hero-desktop-background.jpg');
-	--hero-mobile-background: url("/src/assets/images/hero-mobile-background.jpg");
-	--banner-image: url("/src/assets/images/about-section-img.jpg");
+	/* Background*/
+	--hero-background: url("https://res.cloudinary.com/deq7rk87d/image/upload/v1733086105/hero-image_c5f8bw.jpg");
+	--about-background: url("https://res.cloudinary.com/deq7rk87d/image/upload/v1733085936/about-image-1_scptg2.jpg");
 
 	/* FUENTES */
 	--font-primary: 'Poppins', sans-serif;

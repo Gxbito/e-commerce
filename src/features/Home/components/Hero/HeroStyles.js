@@ -3,8 +3,9 @@ import { SecondaryButtonStyled } from "../../../../components/UI/BotonStyles";
 
 export const HeroContainerStyled = styled.div`
   width: 100%;
+  position: relative;
   min-height: 85vh;
-  background-image: var(--hero-desktop-background);
+  background-image: var(--hero-background);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,10 +15,24 @@ export const HeroContainerStyled = styled.div`
   align-items: center;
   gap: 20px;
 
+  &::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
   @media (max-width: 968px) {
-    background-image: var(--hero-mobile-background);
     gap: 36px;
     min-height: 80vh;
+  }
+
+  & > div {
+    z-index: 2;
   }
 `;
 

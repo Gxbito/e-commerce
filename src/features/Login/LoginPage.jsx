@@ -5,7 +5,7 @@ import Banner from "../../components/UI/Banner";
 function LoginPage() {
   return (
     <FormLayout>
-      <Banner bgImage="/src/assets/images/banner-image-2.jpg" />
+      <Banner bgImage="https://res.cloudinary.com/deq7rk87d/image/upload/v1733086153/banner-image-1_vpopca.jpg" />
       <LoginForm />
     </FormLayout>
   );

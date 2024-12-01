@@ -66,7 +66,7 @@ export const HeroTitleTextContainer = styled.div`
 export const HeroStatsBanner = styled.div`
   width: 100%;
   height: 540px;
-  background-image: var(--banner-image);
+  background-image: var(--about-background);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -6,7 +6,7 @@ function ContactPage() {
   return (
     <FormLayout>
       <ContactForm />
-      <Banner bgImage="/src/assets/images/banner-image-1.jpg" />
+      <Banner bgImage="https://res.cloudinary.com/deq7rk87d/image/upload/v1733086155/banner-image-2_gatw4j.jpg" />
     </FormLayout>
   );
 }

@@ -192,6 +192,7 @@ export const ChangeColorButtonStyled = styled.button`
   font-size: 2em;
   transition: all 0.2s ease;
   cursor: pointer;
+  z-index: 5;
 
   &:hover {
     box-shadow: var(--shadow-button);

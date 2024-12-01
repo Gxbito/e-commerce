@@ -31,10 +31,10 @@ export const NavbarStyled = styled.div`
 
   img {
     height: auto;
-    width: 5em;
+    width: 3.4em;
 
     @media (max-width: 968px) {
-      width: 4em;
+      width: 2.4em;
     }
   }
 `;
@@ -148,10 +148,12 @@ export const UserContainer = styled.div`
     }
   }
 
-  img {
+  svg {
     width: 40px;
     height: 40px;
     border-radius: 100%;
+    background-color: var(--neutral-100);
+    color: var(--black);
   }
 
   & + button {

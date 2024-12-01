@@ -5,9 +5,6 @@ import {
   TimelineData,
 } from "./TimelineStyles";
 
-import timelineImage from "../../../../assets/images/timeline-image.jpg";
-import timelineSecondaryImage from "../../../../assets/images/hero-desktop-background.jpg";
-
 function Timeline() {
   return (
     <TimelineWrapper>
@@ -18,11 +15,11 @@ function Timeline() {
 
       <TimelineImagesContainer>
         <TimelineImage>
-          <img src={timelineImage} alt="" />
+          <img src="https://res.cloudinary.com/deq7rk87d/image/upload/v1733085937/about-image-2_ejrwy5.jpg" alt="" />
         </TimelineImage>
 
         <TimelineImage>
-          <img src={timelineSecondaryImage} alt="" />
+          <img src="https://res.cloudinary.com/deq7rk87d/image/upload/v1733085937/about-image-3_eehrw7.jpg" alt="" />
         </TimelineImage>
       </TimelineImagesContainer>
 

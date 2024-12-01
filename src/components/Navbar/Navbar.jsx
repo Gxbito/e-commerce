@@ -17,6 +17,7 @@ import Separador from "../UI/Separador";
 import { setCurrentUser } from "../../features/UserSlice/userSlice";
 import { IoIosLogOut } from "react-icons/io";
 import { useDispatch } from "react-redux";
+import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Navbar() {
   const items = useSelector((state) => state.cart.items);
@@ -30,7 +31,7 @@ function Navbar() {
     setClick((prev) => !prev);
   };
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const logoutUser = () => {
     console.log("lol");
@@ -41,9 +42,9 @@ function Navbar() {
   return (
     <NavbarContainerStyled>
       <NavbarStyled>
-        <a href="#">
-          <img src="./src/assets/images/navbar-logo.png" alt="" />
-        </a>
+        <Link to="home">
+          <img src="https://res.cloudinary.com/deq7rk87d/image/upload/v1733089858/navbar-logo_af16zf.svg" alt="" />
+        </Link>
 
         <NavbarLinksContainer>
           <Link to="/">Home</Link>
@@ -70,7 +71,8 @@ function Navbar() {
           {currentUser ? (
             <>
               <UserContainer>
-                <img src="./src/assets/images/avatar.jpg" alt="avatar" />
+                <IoPersonCircleOutline />
+
                 <span>
                   Hi, <b>{currentUser.nombre}!</b>
                 </span>
