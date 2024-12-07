@@ -1,5 +1,5 @@
 // Archivos internos - Componentes
-import ShopProducts from "./components/ShopProducts"
+import ShopProducts from "./components/ShopProducts/ShopProducts"
 
 function ProductsPage() {
   return (

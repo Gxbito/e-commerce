@@ -19,14 +19,15 @@ import {
 } from "./ShopProductsStyles";
 
 // Archivos internos - Componentes y Datos
-import Selector from "../../../components/UI/Selector/Selector";
-import Checkbox from "../../../components/UI/Checkbox/Checkbox";
-import SquareButton from "../../../components/UI/Buttons/SquareButton/SquareButton"
-import Input from "../../../components/UI/Input/Input";
-import ProductCard from "../../../components/UI/ProductCard/ProductCard";
-import ProductMiniCard from "../../../components/UI/ProductMiniCard/ProductMiniCard";
-import ProductModal from "../../../components/UI/ProductModal/ProductModal";
-import { productos } from "../../../data/productos";
+import Pagination from "../Pagination/Pagination";
+import Selector from "../../../../components/UI/Selector/Selector";
+import Checkbox from "../../../../components/UI/Checkbox/Checkbox";
+import SquareButton from "../../../../components/UI/Buttons/SquareButton/SquareButton";
+import Input from "../../../../components/UI/Input/Input";
+import ProductCard from "../../../../components/UI/ProductCard/ProductCard";
+import ProductMiniCard from "../../../../components/UI/ProductMiniCard/ProductMiniCard";
+import ProductModal from "../../../../components/UI/ProductModal/ProductModal";
+import { productos } from "../../../../data/productos";
 
 function ShopProducts() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -37,11 +38,14 @@ function ShopProducts() {
   const [showModal, setShowModal] = useState(false);
   const [productModal, setProductModal] = useState(null);
   const [activeButton, setActiveButton] = useState("square");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = 9;
 
   const [isOpen, setIsOpen] = useState({
-    gender: false,
-    brand: false,
-    season: false,
+    gender: true,
+    brand: true,
+    season: true,
   });
   const [filters, setFilters] = useState({
     gender: [],
@@ -106,6 +110,10 @@ function ShopProducts() {
     }, 3000);
   };
 
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   const sortOptionHandler = (option) => {
     setSortOption(option);
   };
@@ -143,6 +151,11 @@ function ShopProducts() {
       matchesPrice
     );
   });
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentProducts = filteredProducts.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
   return (
     <ProductShopWrapper>
@@ -281,7 +294,7 @@ function ShopProducts() {
         </OptionsContainer>
 
         <ProductsContainer activeStyle={activeButton}>
-          {filteredProducts.map((product) => (
+          {currentProducts.map((product) => (
             <ProductCard
               key={product.id}
               {...product}
@@ -312,6 +325,11 @@ function ShopProducts() {
           />
         </ProductsContainer>
         <ModalBackground showModal={showModal} />
+        <Pagination 
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+        />
       </ItemsOptionsContainer>
     </ProductShopWrapper>
   );

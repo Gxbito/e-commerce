@@ -74,13 +74,14 @@ export const CategoryTitle = styled.div`
 
 export const CategoryOptionsContainer = styled.div`
   width: 100%;
-  height: ${({ isOpen }) => (isOpen ? "120px" : "0px")};
+  height: ${({ isOpen }) => (isOpen ? "auto" : "0px")};
   overflow: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 1em;
+  padding: ${({ isOpen }) => (isOpen ? "1em 0em" : "0em")};
   transition: all 0.1s ease;
 `;
 
