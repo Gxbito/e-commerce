@@ -69,6 +69,7 @@ function ShopProducts() {
   };
 
   const handleFilterChange = (category, value) => {
+    setCurrentPage(1);
     setFilters((prevFilters) => {
       const currentCategory = prevFilters[category];
       const isSelected = currentCategory.includes(value);
