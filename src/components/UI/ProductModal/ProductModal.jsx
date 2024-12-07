@@ -97,11 +97,13 @@ function ProductModal({
         selectedSize,
       });
       setQuantity(1);
+      setSelectedSize(null);
     }
   };
 
   const handleHideModal = () => {
     hideModal(false);
+    setSelectedSize(null);
   };
 
   return (

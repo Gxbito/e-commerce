@@ -125,11 +125,17 @@ export const ProductsContainer = styled.div`
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: ${({activeStyle}) => (activeStyle === "list" ? "repeat(2, 1fr)" : "repeat(auto-fill, minmax(280px, 1fr))")};
+  grid-template-columns: ${({ activeStyle }) =>
+    activeStyle === "list"
+      ? "repeat(2, 1fr)"
+      : "repeat(auto-fill, minmax(280px, 1fr))"};
   gap: 1em;
 
   @media (max-width: 668px) {
-    grid-template-columns: ${({activeStyle}) => (activeStyle === "list" ? "repeat(1, 1fr)" : "repeat(auto-fit, minmax(140px, 1fr))")};
+    grid-template-columns: ${({ activeStyle }) =>
+      activeStyle === "list"
+        ? "repeat(1, 1fr)"
+        : "repeat(auto-fit, minmax(140px, 1fr))"};
   }
 `;
 
