@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SecondaryButtonStyled } from "../../../../components/UI/BotonStyles";
+import { SecondaryButtonStyled } from "../../../../components/UI/Buttons/SecondaryButton/SecondaryButtonStyles";
 
 export const HeroContainerStyled = styled.div`
   width: 100%;

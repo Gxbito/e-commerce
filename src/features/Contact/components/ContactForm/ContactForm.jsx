@@ -1,16 +1,20 @@
+// Bibliotecas externas
+import { useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+
+// Archivos internos - Estilos
 import {
   FormStyled,
   FormTextContainer,
   FormInputContainer,
 } from "./ContactFormStyles";
 
-import TextArea from "../../../../components/UI/TextArea";
-import Input from "../../../../components/UI/Input";
-import { SubmitButton } from "../../../../components/UI/Boton";
-import Span from "../../../../components/UI/Span";
-import { useState } from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+// Archivos internos - Componentes
+import TextArea from "../../../../components/UI/TextArea/TextArea";
+import Input from "../../../../components/UI/Input/Input";
+import SubmitButton from "../../../../components/UI/Buttons/SubmitButton/SubmitButton";
+import MessageSpan from "../../../../components/UI/MessageSpan/MessageSpan"
 
 function ContactForm() {
   const [send, setIsSend] = useState(false);
@@ -45,7 +49,7 @@ function ContactForm() {
 
   return (
     <FormStyled onSubmit={handleSubmit}>
-      <Span send={send}>Thank you! Your message has been sent.</Span>
+      <MessageSpan send={send}>Thank you! Your message has been sent.</MessageSpan>
 
       <FormTextContainer>
         <h2>Have a Question? Let us know</h2>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SquareButtonStyled } from "../UI/BotonStyles";
+import { SquareButtonStyled } from "../UI/Buttons/SquareButton/SquareButtonStyles";
 
 export const NavbarContainerStyled = styled.div`
   width: 100%;

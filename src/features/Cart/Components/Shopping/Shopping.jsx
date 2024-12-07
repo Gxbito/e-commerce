@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from "react";
+// Bibliotecas externas
+import { useState, useEffect } from "react";
+import { IoIosArrowRoundForward, IoMdClose } from "react-icons/io";
+import { TbTrash } from "react-icons/tb";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+
+// Archivos internos - Estilos
 import {
   ShoppingContainer,
   ShoppingDataContainer,
@@ -7,13 +14,13 @@ import {
   ItemsContainer,
   UndoSpan,
 } from "./ShoppingStyles";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import Separador from "../../../../components/UI/Separador";
+
+// Archivos internos - Componentes
+import Divider from "../../../../components/UI/Divider/Divider";
 import ProductCard from "../ProductCard/ProductCard";
-import { IoIosArrowRoundForward, IoMdClose } from "react-icons/io";
+
+// Archivos internos - Funcionalidad
 import { undoRemove, clearCart } from "../../../CartSlice/cartSlice";
-import { TbTrash } from "react-icons/tb";
 
 function Shopping() {
   const items = useSelector((state) => state.cart.items);
@@ -21,7 +28,7 @@ function Shopping() {
   const dispatch = useDispatch();
   const [showUndo, setShowUndo] = useState(false);
 
-  console.log(items)
+  console.log(items);
 
   const quantity = items.reduce((total, item) => total + item.quantity, 0);
 
@@ -75,7 +82,7 @@ function Shopping() {
         <h4>Price</h4>
         <h4>Total</h4>
       </ShoppingHeaderContainer>
-      <Separador />
+      <Divider />
       <ItemsContainer>
         {items.map((product) => (
           <ProductCard key={product.id} {...product} />

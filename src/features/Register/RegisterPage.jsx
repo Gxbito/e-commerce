@@ -1,6 +1,7 @@
+// Archivos internos - Componentes
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import FormLayout from "../../components/FormLayout/FormLayout";
-import Banner from "../../components/UI/Banner";
+import Banner from "../../components/UI/Banner/Banner"
 
 function RegisterPage() {
   return (

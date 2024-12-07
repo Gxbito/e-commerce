@@ -1,6 +1,7 @@
+// Archivos internos - Componentes
 import ContactForm from "./components/ContactForm/ContactForm";
 import FormLayout from "../../components/FormLayout/FormLayout";
-import Banner from "../../components/UI/Banner";
+import Banner from "../../components/UI/Banner/Banner";
 
 function ContactPage() {
   return (

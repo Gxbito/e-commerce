@@ -1,12 +1,11 @@
+// Bibliotecas externas
 import { createSlice } from "@reduxjs/toolkit";
 
-// Función para calcular la fecha actual más 3 días y formatearla
 const getEstimatedDeliveryDate = () => {
   const currentDate = new Date();
   const estimatedDeliveryDate = new Date(currentDate);
   estimatedDeliveryDate.setDate(currentDate.getDate() + 3);
 
-  // Formatear la fecha al estilo "December 3, 2024"
   const options = { month: "long", day: "numeric", year: "numeric" };
   return `Estimated Delivery by ${estimatedDeliveryDate.toLocaleDateString(
     "en-US",
@@ -14,7 +13,6 @@ const getEstimatedDeliveryDate = () => {
   )}`;
 };
 
-// Estado inicial
 const initialState = {
   subtotal: 0,
   discount: 0,

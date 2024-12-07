@@ -1,3 +1,16 @@
+// Bibliotecas externas
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  IoBagOutline,
+  IoHeartOutline,
+  IoMenuOutline,
+  IoPersonCircleOutline,
+} from "react-icons/io5";
+import { IoIosLogOut } from "react-icons/io";
+import { Link } from "react-router-dom";
+
+// Archivos internos - Estilos
 import {
   NavbarContainerStyled,
   NavbarStyled,
@@ -7,17 +20,16 @@ import {
   NumberSpan,
   UserContainer,
 } from "./NavbarStyles";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+
+// Archivos internos - Componentes
 import BurguerMenu from "../Menu/BurguerMenu";
-import { PrimaryButton, SquareButton, SecondaryButton } from "../UI/Boton";
-import { IoBagOutline, IoHeartOutline, IoMenuOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import Separador from "../UI/Separador";
+import SecondaryButton from "../UI/Buttons/SecondaryButton/SecondaryButton";
+import PrimaryButton from "../UI/Buttons/PrimaryButton/PrimaryButton";
+import SquareButton from "../UI/Buttons/SquareButton/SquareButton";
+import Divider from "../UI/Divider/Divider";
+
+// Archivos internos - Funcionalidad
 import { setCurrentUser } from "../../features/UserSlice/userSlice";
-import { IoIosLogOut } from "react-icons/io";
-import { useDispatch } from "react-redux";
-import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Navbar() {
   const items = useSelector((state) => state.cart.items);
@@ -42,8 +54,11 @@ function Navbar() {
   return (
     <NavbarContainerStyled>
       <NavbarStyled>
-        <Link to="home">
-          <img src="https://res.cloudinary.com/deq7rk87d/image/upload/v1733089858/navbar-logo_af16zf.svg" alt="" />
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/deq7rk87d/image/upload/v1733089858/navbar-logo_af16zf.svg"
+            alt="E-commerce"
+          />
         </Link>
 
         <NavbarLinksContainer>
@@ -98,20 +113,20 @@ function Navbar() {
                 </span>
               </UserContainer>
               <Link to="/">Home</Link>
-              <Separador />
+              <Divider />
               <Link to="products">Products</Link>
-              <Separador />
+              <Divider />
               <Link to="about">About us</Link>
               <SecondaryButton onClick={logoutUser}>Log Out</SecondaryButton>
             </>
           ) : (
             <>
               <Link to="/">Home</Link>
-              <Separador />
+              <Divider />
               <Link to="products">Products</Link>
-              <Separador />
+              <Divider />
               <Link to="about">About us</Link>
-              <Separador />
+              <Divider />
               <PrimaryButton>Log In</PrimaryButton>
               <SecondaryButton>Register</SecondaryButton>
             </>

@@ -1,6 +1,12 @@
+// Bibliotecas externas
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setCurrentUser } from "../../../UserSlice/userSlice";
-import { createUser } from "../../../../axios/axiosUser";
+import { IoLogoGoogle, IoLogoApple } from "react-icons/io";
+import { Link, useNavigate } from "react-router-dom";
+import { Formik } from "formik";
+import * as Yup from "yup";
+
+// Archivos internos - Estilos
 import {
   FormStyled,
   FormTextContainer,
@@ -8,16 +14,15 @@ import {
   SeparatorContainer,
   ButtonsContainer,
 } from "./RegisterFormStyles";
-import { SubmitButton } from "../../../../components/UI/Boton";
-import Input from "../../../../components/UI/LoginInput";
-import { SecondaryButton } from "../../../../components/UI/Boton";
-import { IoLogoGoogle, IoLogoApple } from "react-icons/io";
-import { Link } from "react-router-dom";
-import { Formik } from "formik";
-import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import Span from "../../../../components/UI/Span";
+
+// Archivos internos - Componentes
+import SubmitButton from "../../../../components/UI/Buttons/SubmitButton/SubmitButton"
+import Input from "../../../../components/UI/LoginInput/LoginInput";
+import MessageSpan from "../../../../components/UI/MessageSpan/MessageSpan";
+
+// Archivos internos - Funcionalidad
+import { setCurrentUser } from "../../../UserSlice/userSlice";
+import { createUser } from "../../../../axios/axiosUser";
 
 function RegisterForm() {
   const [send, setIsSend] = useState(false);
@@ -72,7 +77,7 @@ function RegisterForm() {
     >
       {({ isValid }) => (
         <FormStyled>
-          <Span send={send}>Registro en proceso...</Span>
+          <MessageSpan send={send}>Registro en proceso...</MessageSpan>
           <FormTextContainer>
             <h2>Welcome to Trendsetter Threads</h2>
             <h3>Join our fashion community today!</h3>

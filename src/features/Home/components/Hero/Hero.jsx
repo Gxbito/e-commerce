@@ -1,5 +1,13 @@
-import { HeroButtonContainer, SecondaryHeroButtonStyled, HeroTextContainer, HeroContainerStyled } from "./HeroStyles";
-import { PrimaryButton } from "../../../../components/UI/Boton";
+// Archivos internos - Estilos
+import {
+  HeroButtonContainer,
+  SecondaryHeroButtonStyled,
+  HeroTextContainer,
+  HeroContainerStyled,
+} from "./HeroStyles";
+
+// Archivos internos - Componentes
+import PrimaryButton from "../../../../components/UI/Buttons/PrimaryButton/PrimaryButton";
 
 function Hero() {
   return (
@@ -10,11 +18,9 @@ function Hero() {
       </HeroTextContainer>
 
       <HeroButtonContainer>
-
         <SecondaryHeroButtonStyled>Collections</SecondaryHeroButtonStyled>
 
         <PrimaryButton>Shop Now</PrimaryButton>
-
       </HeroButtonContainer>
     </HeroContainerStyled>
   );

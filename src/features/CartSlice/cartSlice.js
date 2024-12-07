@@ -1,3 +1,4 @@
+// Bibliotecas externas
 import { createSlice } from "@reduxjs/toolkit";
 
 const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -51,6 +52,12 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, incrementQuantity, decrementQuantity, undoRemove, clearCart, } = cartSlice.actions;
+export const {
+  addToCart,
+  incrementQuantity,
+  decrementQuantity,
+  undoRemove,
+  clearCart,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

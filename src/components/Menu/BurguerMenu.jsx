@@ -1,3 +1,4 @@
+// Archivos internos - Estilos
 import {
   BurguerMenuContainer,
   BurguerOptionsContainer,

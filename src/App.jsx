@@ -1,18 +1,26 @@
+// Bibliotecas externas
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+
+// Archivos internos - Estado y contexto
+import store from "../src/store/store";
+import ThemeProvider from "./context/ThemeContext";
+
+// Archivos internos - Componentes principales
 import Layout from "./components/Layout/Layout";
+import ScrollToTop from "./components/Scroll/ScrollToTop";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+
+// Archivos internos - Páginas
 import HomePage from "./features/Home/HomePage";
 import AboutPage from "./features/About/AboutPage";
 import ProductsPage from "./features/Products/ProductsPage";
 import CartPage from "./features/Cart/CartPage";
 import ContactPage from "./features/Contact/ContactPage";
 import LoginPage from "./features/Login/LoginPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "../src/store/store";
-import ThemeProvider from "./context/ThemeContext";
-import ScrollToTop from "./components/Scroll/ScrollToTop";
 import RegisterPage from "./features/Register/RegisterPage";
-import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import CheckoutPage from "./features/Checkout/CheckoutPage";
+import ErrorPage from "./features/Error/ErrorPage";
 
 function App() {
   return (
@@ -38,7 +46,7 @@ function App() {
                 }
               />
             </Route>
-            {/* <Route path="*" element={<ErrorPage />} /> */}
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Router>
       </ThemeProvider>

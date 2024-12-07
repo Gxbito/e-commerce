@@ -1,4 +1,9 @@
+// Bibliotecas externas
 import { useState } from "react";
+import { IoIosList, IoMdApps } from "react-icons/io";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
+// Archivos internos - Estilos
 import {
   ProductShopWrapper,
   DataFiltersContainer,
@@ -12,16 +17,16 @@ import {
   CategoryOptionsContainer,
   ModalBackground,
 } from "./ShopProductsStyles";
-import Selector from "../../../components/UI/Selector";
-import Checkbox from "../../../components/UI/Checkbox";
-import { SquareButton } from "../../../components/UI/Boton";
-import Input from "../../../components/UI/Input";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { IoIosList, IoMdApps } from "react-icons/io";
+
+// Archivos internos - Componentes y Datos
+import Selector from "../../../components/UI/Selector/Selector";
+import Checkbox from "../../../components/UI/Checkbox/Checkbox";
+import SquareButton from "../../../components/UI/Buttons/SquareButton/SquareButton"
+import Input from "../../../components/UI/Input/Input";
+import ProductCard from "../../../components/UI/ProductCard/ProductCard";
+import ProductMiniCard from "../../../components/UI/ProductMiniCard/ProductMiniCard";
+import ProductModal from "../../../components/UI/ProductModal/ProductModal";
 import { productos } from "../../../data/productos";
-import ProductCard from "../../../components/UI/Card";
-import MiniCard from "../../../components/UI/MiniCard";
-import ProductModal from "../../../components/UI/ProductModal";
 
 function ShopProducts() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -285,7 +290,7 @@ function ShopProducts() {
             />
           ))}
 
-          <MiniCard
+          <ProductMiniCard
             img={showMiniCard?.img}
             title={showMiniCard?.title}
             price={showMiniCard?.price}

@@ -1,13 +1,18 @@
-import React from "react";
+// Bibliotecas externas
+import { Link } from "react-router-dom";
+
+// Archivos internos - Estilos
 import {
   CategoriesContainerWrapper,
   CategoriesTextButtonContainer,
   CategoriesContainer,
 } from "./CategoriasStyles";
-import { categorias } from "../../../../data/categorias";
+
+// Archivos internos - Datos y componentes
 import Categoria from "./Categoria";
-import { SecondaryButton } from "../../../../components/UI/Boton";
-import { Link } from "react-router-dom";
+import { categorias } from "../../../../data/categorias";
+import SecondaryButton from "../../../../components/UI/Buttons/SecondaryButton/SecondaryButton";
+
 
 function Categorias() {
   return (

@@ -1,3 +1,4 @@
+// Archivos internos - Componentes
 import Checkout from "./Components/Checkout/Checkout";
 
 function CheckoutPage() {

@@ -1,3 +1,4 @@
+// Archivos internos - Estilos
 import { FormLayoutStyled } from "./FormLayoutStyles"
 
 function FormLayout({children}) {

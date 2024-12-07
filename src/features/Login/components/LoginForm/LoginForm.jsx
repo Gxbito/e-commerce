@@ -1,7 +1,12 @@
-import { useDispatch } from "react-redux";
+// Bibliotecas externas
 import { useState } from "react";
-import { setCurrentUser } from "../../../UserSlice/userSlice";
-import { loginUser } from "../../../../axios/axiosUser";
+import { useDispatch } from "react-redux";
+import { IoLogoGoogle, IoLogoApple } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { Formik } from "formik";
+import * as Yup from "yup";
+
+// Archivos internos - Estilos
 import {
   Form,
   FormTextContainer,
@@ -9,15 +14,17 @@ import {
   SeparatorContainer,
   ButtonsContainer,
 } from "./LoginFormStyles";
-import Input from "../../../../components/UI/LoginInput";
-import { SubmitButton } from "../../../../components/UI/Boton";
-import { SecondaryButton } from "../../../../components/UI/Boton";
-import { IoLogoGoogle, IoLogoApple } from "react-icons/io";
-import { Link } from "react-router-dom";
-import { Formik } from "formik";
-import * as Yup from "yup";
+
+// Archivos internos - Componentes
+import SubmitButton from "../../../../components/UI/Buttons/SubmitButton/SubmitButton"
+import Input from "../../../../components/UI/LoginInput/LoginInput";
+import SecondaryButton from "../../../../components/UI/Buttons/SecondaryButton/SecondaryButton";
+import MessageSpan from "../../../../components/UI/MessageSpan/MessageSpan";
+
+// Archivos internos - Funcionalidad
+import { setCurrentUser } from "../../../UserSlice/userSlice";
+import { loginUser } from "../../../../axios/axiosUser";
 import useRedirect from "../../../../hooks/useRedirect";
-import Span from "../../../../components/UI/Span";
 
 function LoginForm() {
   const [send, setIsSend] = useState(false);
@@ -59,7 +66,7 @@ function LoginForm() {
     >
       {({ isValid }) => (
         <Form>
-          <Span send={send}>Inicio en proceso...</Span>
+          <MessageSpan send={send}>Inicio en proceso...</MessageSpan>
           <FormTextContainer>
             <h2>Hi, Welcome Back!</h2>
             <h3>We were waiting for you!</h3>

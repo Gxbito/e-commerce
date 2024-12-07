@@ -1,10 +1,17 @@
+// Bibliotecas externas
+import { Outlet } from "react-router-dom";
+import { VscColorMode } from "react-icons/vsc";
+
+// Archivos internos - Estilos
 import { LayoutWrapper } from "./LayoutStyles";
+
+// Archivos internos - Componentes
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import { Outlet } from "react-router-dom";
+import FAB from "../../components/UI/Buttons/FAB/FAB";
+
+// Archivos internos - Funcionalidad
 import { useTheme } from "../../context/ThemeContext";
-import { ChangeColorButton } from "../UI/Boton";
-import { VscColorMode } from "react-icons/vsc";
 
 function Layout({ children }) {
   const { theme, toggleTheme } = useTheme();
@@ -14,10 +21,10 @@ function Layout({ children }) {
       <Navbar />
       {children}
       <Outlet />
-      <Footer/>
-      <ChangeColorButton onClick={toggleTheme}>
+      <Footer />
+      <FAB onClick={toggleTheme}>
         <VscColorMode />
-      </ChangeColorButton>
+      </FAB>
     </LayoutWrapper>
   );
 }

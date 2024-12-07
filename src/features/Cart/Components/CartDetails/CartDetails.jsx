@@ -1,24 +1,32 @@
+// Bibliotecas externas
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+
+// Archivos internos - Estilos
 import {
   SummaryContainer,
   SummaryData,
   CouponContainer,
   CheckoutContainer,
 } from "./CartDetailsStyles";
-import { PrimaryButton } from "../../../../components/UI/Boton";
-import Separador from "../../../../components/UI/Separador";
-import Input from "../../../../components/UI/Input";
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+
+// Archivos internos - Componentes
+import PrimaryButton from "../../../../components/UI/Buttons/PrimaryButton/PrimaryButton"
+import Divider from "../../../../components/UI/Divider/Divider";
+import Input from "../../../../components/UI/Input/Input";
+
+// Archivos internos - Funcionalidad
 import { updateCheckout } from "../../../../features/CheckoutSlice/checkoutSlice";
-import { useEffect } from "react";
 
 function CartDetails() {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
 
-  const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const subtotal = items.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
   const discountRate = 0.12;
   const taxRate = 0.21;
   const [coupon, setCoupon] = useState("");
@@ -72,7 +80,7 @@ function CartDetails() {
           <h4>
             Shipping <strong>FREE</strong>
           </h4>
-          <Separador />
+          <Divider />
           <h4>
             Total <b>${total.toFixed(2)}</b>
           </h4>

@@ -1,3 +1,4 @@
+// Archivos internos - Estilos
 import { LayoutSyled } from "./LayoutStyles";
 
 function Layout({ children }) {

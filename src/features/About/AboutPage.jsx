@@ -1,16 +1,16 @@
 import HeroStats from "./components/HeroStats/HeroStats";
 import AboutSection from "./components/AboutSection/AboutSection";
 import Timeline from "./components/Timeline/Timeline";
-import Separador from "../../components/UI/Separador";
+import Divider from "../../components/UI/Divider/Divider";
 
 function AboutPage() {
 
   return (
     <>
       <HeroStats />
-      <Separador />
+      <Divider />
       <AboutSection />
-      <Separador />
+      <Divider />
       <Timeline />
     </>
   );

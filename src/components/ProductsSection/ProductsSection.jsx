@@ -1,12 +1,17 @@
+// Bibliotecas externas
+import { Link } from "react-router-dom";
+import { IoIosArrowRoundForward } from "react-icons/io";
+
+// Archivos internos - Estilos
 import {
   ProductSectionWrapper,
   ProductsContainer,
   TitleLinkContainer,
 } from "./ProductsSectionStyles";
+
+// Archivos internos - Componentes y Datos
+import ProductCard from "../UI/ProductCard/ProductCard";
 import { productos } from "../../data/productos";
-import ProductCard from "../UI/Card";
-import { Link } from "react-router-dom";
-import { IoIosArrowRoundForward } from "react-icons/io";
 
 function ProductsSection({category}) {
   return (

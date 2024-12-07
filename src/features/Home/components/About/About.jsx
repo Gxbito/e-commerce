@@ -1,17 +1,24 @@
+// Bibliotecas externas
+import { Link } from "react-router-dom";
+
+// Archivos internos - Estilos
 import {
   AboutWrapper,
   AboutTextButtonContainer,
   AboutImageContainer,
 } from "./AboutStyles";
-import { SecondaryButton } from "../../../../components/UI/Boton";
-import { Link } from "react-router-dom";
+
+// Archivos internos - Componentes
+import SecondaryButton from "../../../../components/UI/Buttons/SecondaryButton/SecondaryButton";
 
 function About() {
-  
   return (
     <AboutWrapper>
       <AboutImageContainer>
-        <img src="https://res.cloudinary.com/deq7rk87d/image/upload/v1733085936/about-image-1_scptg2.jpg" alt="Purple Dress Girl" />
+        <img
+          src="https://res.cloudinary.com/deq7rk87d/image/upload/v1733085936/about-image-1_scptg2.jpg"
+          alt="Purple Dress Girl"
+        />
       </AboutImageContainer>
 
       <AboutTextButtonContainer>

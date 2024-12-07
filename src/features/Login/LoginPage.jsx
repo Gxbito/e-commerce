@@ -1,6 +1,7 @@
+// Archivos internos - Componentes
 import LoginForm from "./components/LoginForm/LoginForm";
 import FormLayout from "../../components/FormLayout/FormLayout";
-import Banner from "../../components/UI/Banner";
+import Banner from "../../components/UI/Banner/Banner";
 
 function LoginPage() {
   return (

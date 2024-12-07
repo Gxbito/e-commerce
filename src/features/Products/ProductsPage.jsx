@@ -1,3 +1,4 @@
+// Archivos internos - Componentes
 import ShopProducts from "./components/ShopProducts"
 
 function ProductsPage() {

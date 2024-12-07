@@ -1,5 +1,8 @@
+// Bibliotecas externas
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../features/UserSlice/userSlice"; // Arreglo de importacion
+
+// Archivos internos - Funcionalidad
+import userReducer from "../features/UserSlice/userSlice";
 import cartReducer from "../features/CartSlice/cartSlice";
 import checkoutReducer from "../features/CheckoutSlice/checkoutSlice";
 

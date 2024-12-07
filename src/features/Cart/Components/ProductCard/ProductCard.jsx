@@ -1,15 +1,21 @@
+// Bibliotecas externas
+import { IoMdRemove, IoIosAdd } from "react-icons/io";
+import { useDispatch } from "react-redux";
+
+// Archivos internos - Estilos
 import {
   CardContainer,
   MainDataContainer,
   DataTextContainer,
   QuantityContainer,
 } from "./ProductCardStyles";
-import { IoMdRemove, IoIosAdd } from "react-icons/io";
-import { useDispatch } from "react-redux";
+
+// Archivos internos - Funcionalidad
 import {
   decrementQuantity,
   incrementQuantity,
 } from "../../../CartSlice/cartSlice";
+
 
 function ProductCard({ id, img, title, brand, category, price, quantity, selectedSize }) {
   const dispatch = useDispatch();

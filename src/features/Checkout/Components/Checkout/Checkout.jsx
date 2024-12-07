@@ -1,3 +1,11 @@
+// Bibliotecas Externas
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { FiTruck, FiBox } from "react-icons/fi";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+
+// Archivos internos - Estilos
 import {
   CheckoutContainer,
   CheckoutForm,
@@ -7,16 +15,13 @@ import {
   ResumeData,
   ItemsContainer,
 } from "./CheckoutStyles";
-import { SquareButton } from "../../../../components/UI/Boton";
-import Input from "../../../../components/UI/Input";
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { FiTruck, FiBox } from "react-icons/fi";
+
+// Archivos internos - Componentes
+import PrimaryButton from "../../../../components/UI/Buttons/PrimaryButton/PrimaryButton"
+import SquareButton from "../../../../components/UI/Buttons/SquareButton/SquareButton"
+import Input from "../../../../components/UI/Input/Input";
 import ProductCard from "../../../Cart/Components/ProductCard/ProductCard";
-import Separador from "../../../../components/UI/Separador";
-import { PrimaryButton } from "../../../../components/UI/Boton";
-import { Formik, Form } from "formik";
-import * as Yup from "yup";
+import Divider from "../../../../components/UI/Divider/Divider";
 
 function Checkout() {
   const [activeButton, setActiveButton] = useState("square");
@@ -42,7 +47,9 @@ function Checkout() {
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is required"),
-    email: Yup.string().email("Invalid email address").required("Email is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
     number: Yup.string()
       .matches(/^\d+$/, "Must be a valid phone number")
       .required("Phone number is required"),
@@ -55,7 +62,7 @@ function Checkout() {
   });
 
   const handleSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2)); // Simulación del envío de datos
+    alert(JSON.stringify(values, null, 2));
   };
 
   return (
@@ -182,7 +189,7 @@ function Checkout() {
                   <h4>
                     Shipping <strong>FREE</strong>
                   </h4>
-                  <Separador />
+                  <Divider />
                   <h4>
                     Total <b>${total.toFixed(2)}</b>
                   </h4>

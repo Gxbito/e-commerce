@@ -1,3 +1,8 @@
+// Bibliotecas externas
+import { Link } from "react-router-dom";
+import { IoLogoInstagram, IoLogoFacebook, IoLogoYoutube } from "react-icons/io";
+
+// Archivos internos - Estilos
 import {
   FooterContainer,
   FooterStyled,
@@ -7,9 +12,9 @@ import {
   FooterIconContainer,
 } from "./FooterStyles";
 
-import Separador from "../UI/Separador";
-import { IoLogoInstagram, IoLogoFacebook, IoLogoYoutube } from "react-icons/io";
-import { Link } from "react-router-dom";
+// Archivos internos - Componentes
+import Divider from "../UI/Divider/Divider";
+
 
 function Footer() {
   return (
@@ -63,7 +68,7 @@ function Footer() {
             </ul>
           </FooterListContainer>
         </FooterDataContainer>
-        <Separador />
+        <Divider />
         <FooterDataContainer>
           <p>2023 Marca inventada Inc. All rights reserved</p>
           <FooterIconContainer>

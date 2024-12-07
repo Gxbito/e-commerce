@@ -1,5 +1,8 @@
-import { CategoryCard } from "./CategoriasStyles";
+// Bibliotecas externas
 import { Link } from "react-router-dom";
+
+// Archivos internos - Estilos
+import { CategoryCard } from "./CategoriasStyles";
 
 function Categoria({ img, title, category }) {
   return (
